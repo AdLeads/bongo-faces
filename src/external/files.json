@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Pre-fab homes",
+    "description": "Fulano",
+    "key": 1,
+    "flex": 12
+  },
+  {
+    "title": "Favorite road trips",
+    "description": "Fulano",
+    "key": 2,
+    "flex": 12
+  },
+  {
+    "title": "Best airlines",
+    "description": "Fulano",
+    "key": 3,
+    "flex": 12
+  },
+  {
+    "title": "Best airlines",
+    "description": "Fulano",
+    "key": 4,
+    "flex": 12
+  },
+  {
+    "title": "Best airlines",
+    "description": "Fulano",
+    "key": 5,
+    "flex": 12
+  }
+]
