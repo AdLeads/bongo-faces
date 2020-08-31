@@ -4,6 +4,7 @@
       <v-row dense>
         <v-col v-for="card in cards" :key="card.key" :cols="card.flex">
           <v-card>
+            <p>qweqweqweqweqw</p>
             <v-card-title v-text="card.title"></v-card-title>
             <v-card-text v-text="card.description"></v-card-text>
             <!-- Start Actions -->
