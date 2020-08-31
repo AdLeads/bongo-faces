@@ -4,6 +4,7 @@
       <v-row dense>
         <v-col v-for="card in cards" :key="card.key" :cols="card.flex">
           <v-card>
+              <v-text :v-text="this.footer"></v-text>
             <v-card-title v-text="card.title"></v-card-title>
             <v-card-text v-text="card.description"></v-card-text>
             <!-- Start Actions -->
@@ -27,6 +28,7 @@
       </v-row>
     </v-container>
   </v-card>
+
 </template>
 
 <script>
@@ -38,6 +40,7 @@ export default {
 
   data: () => ({
     // cards: json,
+    footer: "asdasd",
     cards: [],
     url: "https://protected-cove-86611.herokuapp.com/posts",
   }),
