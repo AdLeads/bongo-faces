@@ -3,7 +3,7 @@
     <v-container fluid>
       <v-row dense>
         <v-col v-for="card in cards" :key="card.key" :cols="card.flex">
-          <v-card >
+          <v-card>
             <v-card-title v-text="card.title"></v-card-title>
             <v-card-text v-text="card.description"></v-card-text>
             <!-- Start Actions -->
@@ -30,12 +30,33 @@
 </template>
 
 <script>
-import json from "../external/files.json";
+// import json from "../external/files.json";
+import axios from "axios";
+
 export default {
   name: "HelloWorld",
 
   data: () => ({
-    cards: json,
+    // cards: json,
+    cards: [],
+    url: "https://protected-cove-86611.herokuapp.com/posts",
   }),
+  mounted() {
+    this.fetchItems();
+  },
+  methods: {
+    fetchItems() {
+      axios
+        .get(this.url)
+        .then((response) => {
+          this.cards = response.data;
+          console.log(this.cards);
+          this.expand = true;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
 };
 </script>
