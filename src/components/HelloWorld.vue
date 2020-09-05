@@ -39,7 +39,7 @@ export default {
   data: () => ({
     // cards: json,
     cards: [],
-    url: "https://protected-cove-86611.herokuapp.com/posts",
+    url: "https://bongo-engine-staging.herokuapp.com/posts",
   }),
   mounted() {
     this.fetchItems();
