@@ -1,62 +1,129 @@
 <template>
-  <v-card class="mx-auto" max-width="1250px">
-    <v-container fluid>
-      <v-row dense>
-        <v-col v-for="card in cards" :key="card.key" :cols="card.flex">
-          <v-card>
-            <v-card-title v-text="card.title"></v-card-title>
-            <v-card-text v-text="card.description"></v-card-text>
-            <!-- Start Actions -->
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-bookmark</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-share-variant</v-icon>
-              </v-btn>
-            </v-card-actions>
-            <!-- End Actions -->
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-card>
+  <div class="hello">
+    <h1>{{ msg }}</h1>
+    <p>
+      For a guide and recipes on how to configure / customize this project,
+      <br />check out the
+      <a
+        href="https://cli.vuejs.org"
+        target="_blank"
+        rel="noopener"
+      >vue-cli documentation</a>.
+    </p>
+    <h3>Installed CLI Plugins</h3>
+    <ul>
+      <li>
+        <a
+          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
+          target="_blank"
+          rel="noopener"
+        >babel</a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
+          target="_blank"
+          rel="noopener"
+        >eslint</a>
+      </li>
+    </ul>
+    <h3>Essential Links</h3>
+    <ul>
+      <li>
+        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
+      </li>
+      <li>
+        <a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a>
+      </li>
+      <li>
+        <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a>
+      </li>
+      <li>
+        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
+      </li>
+    </ul>
+    <h3>Ecosystem</h3>
+    <ul>
+      <li>
+        <a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a>
+      </li>
+      <li>
+        <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/vuejs/vue-devtools#vue-devtools"
+          target="_blank"
+          rel="noopener"
+        >vue-devtools</a>
+      </li>
+      <li>
+        <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a>
+      </li>
+      <li>
+        <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a>
+      </li>
+    </ul>
+    <!-- For vue Lifecycle -->
+    <!-- <div id="appsample">
+      <h1>{{ title }}</h1>
+      <button @click="title = 'Changed'">Update Title</button>
+      <button @click="destroy">Destroy</button>
+    </div>-->
+  </div>
 </template>
 
 <script>
-// import json from "../external/files.json";
-import axios from "axios";
-
 export default {
   name: "HelloWorld",
-
-  data: () => ({
-    // cards: json,
-    cards: [],
-    url: "https://bongo-engine-staging.herokuapp.com/posts",
-  }),
-  mounted() {
-    this.fetchItems();
+  props: {
+    msg: String,
   },
-  methods: {
-    fetchItems() {
-      axios
-        .get(this.url)
-        .then((response) => {
-          this.cards = response.data;
-          console.log(this.cards);
-          this.expand = true;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-  },
+  // // Vue Life cycle
+  // beforeCreate: function () {
+  //   console.log("beforeCreate");
+  // },
+  // created: function () {
+  //   console.log("created");
+  // },
+  // beforeMount: function () {
+  //   console.log("beforeMount");
+  // },
+  // mounted: function () {
+  //   console.log("mounted");
+  // },
+  // beforeUpdate: function () {
+  //   console.log("beforeUpdate");
+  // },
+  // updated: function () {
+  //   console.log("updated");
+  // },
+  // beforeDestroy: function () {
+  //   console.log("beforeDestroy");
+  // },
+  // destroyed: function () {
+  //   console.log("destroyed");
+  // },
 };
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+</style>

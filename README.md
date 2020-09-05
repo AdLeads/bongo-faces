@@ -1,4 +1,4 @@
-# heroku-example
+# Bongo-Faces
 
 ## Project setup
 ```
