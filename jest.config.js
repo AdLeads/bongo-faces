@@ -11,11 +11,12 @@ module.exports = {
     },
     collectCoverage: true,
     collectCoverageFrom: [
-        "src/components/*.{js,vue}",
+        "tests/unit/*.{js,vue}",
         "!**/node_modules/**"
     ],
     coverageReporters: [
         "html",
         "text-summary"
     ],
+    testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$"
 }
