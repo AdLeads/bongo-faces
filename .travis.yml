@@ -1,17 +1,17 @@
 language: node_js
 node_js:
- - "node"
-
+- node
 cache: npm
-
 script: npm run build
-branches: 
+branches:
   only:
-    - master
+  - master
 deploy:
- provider: pages
- skip_cleanup: true
- github_token: $GITHUB_TOKEN
- local_dir: dist
- on:
-   branch: master
+  provider: heroku
+  on:
+    branch: master
+  api_key:
+    secure: bMWkiBjTa1PqjEQYBoARaUw8raNlzvOQKTIpJJOc5Rp8fT97eyzQp9pVM7akuuztHUy7OkTIyg4NRaG71sGYF4smrjndt3eHuwHFQNOe4svCVixeEozlW2V8hoFwjaZX7NG8wxksZK9MkvyRzLFwX56iiZy8tpDDMIfVOEpp9JNmEKGm+K9zC/6nAqbJoFyIitTWzGFHOizPCgeY8A/G7ajEyvTnUUHsYA0gnpB1HuM/Wx7FtVFhabZbFYWJhgls6+YGMNm7pIP9FuBRJgbSaI2kFj2Z/031i9IWUgQM+vCu037Sz65m6goe2NAhCyvihsn5OPpXYHHNi/JzUe2tG5kSSRp6PkUxDPpMsGJvYcWIHeMf0MN9zO2TYEvtfFXLVJa12pEnIq8q+uNsI3vl6K0aIdqKj3iZu+rJAbp9BuymhkvZH5i8EhARRnyYiZSI1/0I3d9hk2ABF2x/r1nUFGD1C62IGZGa7bmswl4gGlxyj9cS+WuTrBXiYos3nKMeObBdqWZXk0FXPcmk+5V4fooRWst9NrE5HrfRQIsMrL4Bk5b2X5+VlSxeAyLS9XchetxlUQHDYN1/ie8oeNGYSKwl8mFKg7xwQTuy7ydSIjt11r/HarDpVOPbJkbzDoDCiJZYry6zdCPzZRHgxBUNKAeG1jYx8De9VEzrcwqVMKY=
+notifications:
+  slack:
+    secure: Q7T0ZI6wUCQoySggyqhtLybxqRbfqLGvSZELUPCHjRwF42Ju4aOF0RvAv12ATYM62Mf40hEF9kg+UfOjMKEpG19oOPyFs+b1+AjME0CI5qxb5VuVdUqvSCJ1DLfQt0LwI+vxRCK3mow+n57bMh6v0nTjVC9V4Mhm2sikT+T6xjLd95NDnbmjDILO4j78F6eSVa7MiPZ9Nlsa9n8AAVyHCvxBKdFDXEsKcZeMHLob7VCNiXH6MGsFMtVC7ayEtDtiAhZ6qvLsyF+ZdKsT1nxa5cxlZscXTHEMbS5X/mvdjTfOw3qyK2xY361RphRCfLoWx5xVoKajxnxl6U9IoT/7i+LYXkHAu4P8vhKhdQa9fAEYbLX6f3efFbTY2emFD8UTSVdiqo55CvGKQ3V5I/KXw9iZzebrvSWTgCv8Wj92NdVHaTU8Bq3PgNJBj9cloYGGiLEK3thfQLCPLDQHEIlNQze4mipXvR0iIFDoEozf3KPUmlhaIA2VDt5tK91byuqgHWPaVxPTCbw+DbNev05wkm8W6P7/csfl8Tqz+D61O9R/Smi/bnHopPsS2715lY6JmM6a9C7595McJgK3CMCBNV6cVrlPoeNcIIh9+Xh4u9K6Xc0yAPr2vOihxlVwdmEHILiZIKjbXpiFzEx1PmcsRvv4+uLJWregMj0iTXrkv+A=
