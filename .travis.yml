@@ -3,7 +3,7 @@ node_js:
 - node
 cache: npm
 script: 
-  - npm run coveralls
+  - npm run coverall
   - npm run build 
 branches:
   only:
