@@ -37,7 +37,6 @@
 
 <script>
 import CardList from "./components/CardList";
-
 export default {
   name: "App",
 

@@ -67,12 +67,6 @@
         <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a>
       </li>
     </ul>
-    <!-- For vue Lifecycle -->
-    <!-- <div id="appsample">
-      <h1>{{ title }}</h1>
-      <button @click="title = 'Changed'">Update Title</button>
-      <button @click="destroy">Destroy</button>
-    </div>-->
   </div>
 </template>
 
@@ -82,35 +76,14 @@ export default {
   props: {
     msg: String,
   },
-  // // Vue Life cycle
-  // beforeCreate: function () {
-  //   console.log("beforeCreate");
-  // },
-  // created: function () {
-  //   console.log("created");
-  // },
-  // beforeMount: function () {
-  //   console.log("beforeMount");
-  // },
-  // mounted: function () {
-  //   console.log("mounted");
-  // },
-  // beforeUpdate: function () {
-  //   console.log("beforeUpdate");
-  // },
-  // updated: function () {
-  //   console.log("updated");
-  // },
-  // beforeDestroy: function () {
-  //   console.log("beforeDestroy");
-  // },
-  // destroyed: function () {
-  //   console.log("destroyed");
-  // },
+  methods: {
+    helloWorld() {
+      alert("Hi!");
+    },
+  },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;

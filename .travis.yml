@@ -3,7 +3,6 @@ node_js:
 - node
 cache: npm
 script: 
-  - npm run test:unit
   - npm run coveralls
   - npm run build 
 branches:
