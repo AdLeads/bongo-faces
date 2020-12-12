@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="1250px">
+  <v-card class="mx-auto" max-width="90%">
     <v-container fluid>
       <v-row dense>
         <v-col v-for="card in cards" :key="card.key" :cols="card.flex">
