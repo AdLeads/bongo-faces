@@ -1,32 +1,80 @@
-[
-  {
-    "title": "Pre-fab homes",
-    "description": "Fulano",
+[{
+    "title": "Java Developer",
+    "description": "At Bose, better sound is just the beginning. We’re passionate engineers, developers, researchers, retailers, marketers … and dreamers. One goal unites us — to create products and experiences our customers simply can’t get anywhere else. We are driven to help people reach their fullest human potential. Creating technology to help people to feel more, do more, and be more. We are highly motivated and curious, and we come to work every day looking to solve real problems and make the best experiences for our customers possible",
     "key": 1,
-    "flex": 12
+    "flex": 12,
+    "show": false,
+    "requirements": [{
+        "name": "Java",
+        "icon": "mdi-language-java",
+        "color": "success"
+      },
+      {
+        "name": "Agile",
+        "icon": "",
+        "color": "primary"
+      },
+      {
+        "name": "Developer",
+        "icon": "mdi-developer-board",
+        "color": "deep-purple accent-4"
+      },
+      {
+        "name": "Ecommerce",
+        "icon": "",
+        "color": "deep-purple accent-4"
+      }
+    ]
   },
   {
-    "title": "Favorite road trips",
-    "description": "Fulano",
+    "title": "Senior JavaScript Developer",
+    "description": "Do you feel as excited writing beautiful, fancy code in React.js as you would go exploring pure vanilla JavaScript? Do you think that frameworks and libraries are simply tools at our (optional) disposal, more than a lifestyle to live and die for? Do you like to comfortably sleep at night because the code base is fully covered by tests?",
     "key": 2,
-    "flex": 12
+    "flex": 12,
+    "show": false,
+    "requirements": [{
+        "name": "React",
+        "icon": "mdi-react",
+        "color": "primary"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "mdi-language-javascript",
+        "color": "blue"
+      },
+      {
+        "name": "Senior",
+        "icon": "",
+        "color": "deep-purple accent-4"
+      },
+      {
+        "name": "AWS",
+        "icon": "mdi-aws",
+        "color": "orange"
+      }
+    ]
   },
   {
     "title": "Best airlines",
     "description": "Fulano",
     "key": 3,
-    "flex": 12
-  },
-  {
-    "title": "Best airlines",
-    "description": "Fulano",
-    "key": 4,
-    "flex": 12
-  },
-  {
-    "title": "Best airlines",
-    "description": "Fulano",
-    "key": 5,
-    "flex": 12
+    "flex": 12,
+    "show": false,
+    "requirements": [{
+        "name": "React",
+        "icon": "mdi-react",
+        "color": "primary"
+      },
+      {
+        "name": "Python",
+        "icon": "mdi-language-python",
+        "color": "orange"
+      },
+      {
+        "name": "C++",
+        "icon": "mdi-language-cpp",
+        "color": "deep-purple accent-4"
+      }
+    ]
   }
 ]

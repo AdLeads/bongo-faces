@@ -1,11 +1,15 @@
-import { shallowMount } from '@vue/test-utils'
+import {
+    shallowMount
+} from '@vue/test-utils'
 import HelloWorld from './HelloWorld.vue'
 
 describe('HelloWorld.vue', () => {
     test('renders props.msg when passed', () => {
         const msg = 'new message'
         const wrapper = shallowMount(HelloWorld, {
-            propsData: { msg }
+            propsData: {
+                msg
+            }
         })
         expect(wrapper.text()).toMatch(msg)
     })
@@ -22,4 +26,3 @@ test('two plus two', () => {
     expect(value).toBe(4);
     expect(value).toEqual(4);
 });
-

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
+    <v-app-bar app color="banner" dark>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -23,13 +23,15 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text>
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+      <v-btn color="primary" target="_blank" :loading="load" @click="postJob">
+        <span class="mr-2">Post a Job</span>
+        <v-icon>mdi-newspaper-plus</v-icon>
       </v-btn>
     </v-app-bar>
 
     <v-main>
+      <!-- publicity -->
+      <br />
       <CardList></CardList>
     </v-main>
   </v-app>
@@ -45,7 +47,13 @@ export default {
   },
 
   data: () => ({
-    //
+    load: false,
   }),
+  methods: {
+    postJob() {
+      this.load = true;
+      this.$vuetify.theme.dark = true;
+    },
+  },
 };
 </script>
