@@ -2,20 +2,20 @@
   <v-card class="mx-auto" max-width="90%">
     <v-container fluid>
       <v-row dense>
-        <v-col v-for="card in cards" :key="card.key" cols="12">
+        <v-col v-for="card in cards" :key="card.jobId" cols="12">
           <v-hover>
-            <v-card :color="card.type">
+            <v-card :color="card.jobType">
               <v-row align="center" justify="center">
                 <v-col cols="12" sm="3" align="center">
                   <v-card
-                    max-height="200px"
-                    max-width="200px"
+                    max-height="150px"
+                    max-width="150px"
                     class="rounded-card"
                   >
                     <v-img
                       lazy-src="https://picsum.photos/id/11/10/6"
-                      height="200px"
-                      width="200px"
+                      height="150px"
+                      width="150px"
                       :src="card.logo"
                       position="center center"
                       @click="card.show = !card.show"
@@ -29,7 +29,9 @@
                     <Requirements :requirements="card.requirements">
                     </Requirements>
                   </v-card-title>
-                  <v-card-text> {{ card.company }} </v-card-text>
+                  <v-card-subtitle>
+                    {{ card.company }}
+                  </v-card-subtitle>
 
                   <v-card-actions>
                     <v-chip class="ma-2" label color="secondary"

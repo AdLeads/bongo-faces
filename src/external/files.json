@@ -1,8 +1,9 @@
 [{
+    "jobId": 1,
     "title": "Java Developer",
     "description": "At Bose, better sound is just the beginning. We’re passionate engineers, developers, researchers, retailers, marketers … and dreamers. One goal unites us — to create products and experiences our customers simply can’t get anywhere else. We are driven to help people reach their fullest human potential. Creating technology to help people to feel more, do more, and be more. We are highly motivated and curious, and we come to work every day looking to solve real problems and make the best experiences for our customers possible. The Searchandizing team is responsible for creating an amazing site search and product category merchandizing experience on the bose.com family of sites, helping connect our customers with exactly the right content or product for their needs.To bring this experience to life, the team has full stack responsibilities that run all the way from webpage presentation through building an accurate search index and managing product information, layering in microservices and AI - driven personalization as part of an exciting greenfield build.This capability is high volume and plays a significant part in the success of the Bose ecommerce experience.",
-    "type": "premium",
-    "key": 1,
+    "postDate": "2021-01-19T19:43:17.556Z",
+    "jobType": "premium",
     "show": false,
     "country": "Lisbon",
     "company": "Bose Corporation",
@@ -27,13 +28,15 @@
         "icon": "",
         "color": "deep-purple accent-4"
       }
-    ]
+    ],
+    "status": "available"
   },
   {
+    "jobId": 2,
     "title": "Senior JavaScript Developer",
-    "description": "We’re an early stage, funded startup focused on helping organizations improve their security posture. We build easy-to-use tools that make it harder for attackers to exploit the people within an organization. Our flagship product is focused on helping organizations run email phishing campaigns against their own employees. This lets organizations assess their risk levels while also providing insight as to what type of training might be necessary for their organization. We are a growing company and can promise you the following:",
-    "type": "lower",
-    "key": 2,
+    "description": "We’re an early stage, funded startup focused on helping organizations improve their security posture. We build easy-to-use tools that make it harder for attackers to exploit the people within an organization. Our flagship product is focused on helping organizations run email phishing campaigns against their own employees. This lets organizations assess their risk levels while also providing insight as to what jobType of training might be necessary for their organization. We are a growing company and can promise you the following:",
+    "postDate": "2021-01-19T19:43:17.556Z",
+    "jobType": "normal",
     "show": false,
     "country": "US",
     "company": "ZibaSec",
@@ -58,13 +61,15 @@
         "icon": "mdi-aws",
         "color": "orange"
       }
-    ]
+    ],
+    "status": "available"
   },
   {
+    "jobId": 3,
     "title": "Best airlines",
     "description": "Fulano",
-    "type": "default",
-    "key": 3,
+    "postDate": "2021-01-19T19:43:17.556Z",
+    "jobType": "default",
     "show": false,
     "country": "La Paz, Bolivia",
     "company": "Fulano S.A.",
@@ -83,6 +88,7 @@
         "icon": "mdi-language-cpp",
         "color": "deep-purple accent-4"
       }
-    ]
+    ],
+    "status": "available"
   }
 ]

@@ -12,7 +12,7 @@ export default new Vuetify({
                 secondary: colors.grey.darken1,
 
                 premium: colors.green,
-                lower: colors.yellow,
+                normal: colors.yellow,
                 default: colors.white,
 
                 banner: colors.blueGrey.darken4,

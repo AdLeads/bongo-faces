@@ -13,10 +13,11 @@
         contain
       ></v-img>
       <v-spacer></v-spacer>
-      <v-btn color="primary" target="_blank" :loading="load" @click="postJob">
-        <span class="mr-2">Post a Job</span>
-        <v-icon>mdi-newspaper-plus</v-icon>
+      <v-btn color="primary" :loading="load" @click="loadJob">
+        <v-icon>{{ icon }}</v-icon>
+        <span class="mr-2"> {{ position ? "Post a Job" : "Back" }} </span>
       </v-btn>
+
       <!-- <v-btn color="primary" tile fab width="150px">
         <span class="mr-2">Post a Job</span>
         <v-icon>mdi-newspaper-plus</v-icon>
@@ -24,37 +25,71 @@
     </v-app-bar>
 
     <v-main>
-      <v-card class="mx-auto" max-width="90%" max-height="20px">
-        <v-divider vertical></v-divider>
-        Ads
-        <!-- Ads -->
-      </v-card>
-      <br />
-      <CardList></CardList>
+      <transition name="slide" mode="out-in">
+        <router-view></router-view>
+      </transition>
       <Suscription></Suscription>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import CardList from "./components/CardList";
 import Suscription from "./components/Suscription";
 export default {
   name: "App",
 
   components: {
-    CardList,
     Suscription,
   },
 
   data: () => ({
     load: false,
+    icon: "mdi-newspaper-plus",
+    position: true,
   }),
   methods: {
-    postJob() {
+    loadJob() {
       this.load = true;
-      this.$vuetify.theme.dark = true;
+      if (this.position) {
+        this.icon = "mdi-keyboard-backspace";
+        this.$router.push("/new-job");
+      } else {
+        this.icon = "mdi-newspaper-plus";
+        this.$router.push("/");
+      }
+      this.position = !this.position;
+      // this.$vuetify.theme.dark = true;
+      this.load = false;
     },
   },
 };
 </script>
+<style scoped>
+.slide-enter-active {
+  animation: slide-in 200ms ease-out forwards;
+}
+.slide-leave-active {
+  animation: slide-out 200ms ease-out forwards;
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+}
+</style>
