@@ -1,23 +1,21 @@
 <template>
   <v-app>
     <v-app-bar app color="banner" hide-on-scroll>
-      <!-- <v-row align="center" justify="center">
-        <v-col cols="12" sm="6" align="center"> </v-col>
-        <v-col cols="12" sm="6" align="right"> </v-col>
-      </v-row> -->
+      <!-- <router-link to="/"> -->
       <v-img
         class="mx-2"
         src="./assets/logo.png"
         max-height="80%"
-        max-width="250px"
+        max-width="150px"
         contain
-      ></v-img>
+      >
+      </v-img>
+      <!-- </router-link> -->
       <v-spacer></v-spacer>
       <v-btn color="primary" :loading="load" @click="loadJob">
         <v-icon>{{ icon }}</v-icon>
         <span class="mr-2"> {{ position ? "Post a Job" : "Back" }} </span>
       </v-btn>
-
       <!-- <v-btn color="primary" tile fab width="150px">
         <span class="mr-2">Post a Job</span>
         <v-icon>mdi-newspaper-plus</v-icon>
@@ -29,7 +27,26 @@
         <router-view></router-view>
       </transition>
       <Suscription></Suscription>
+      <br />
     </v-main>
+
+    <v-footer color="banner" padless>
+      <v-row justify="center" no-gutters>
+        <v-btn
+          v-for="link in links"
+          :key="link"
+          color="white"
+          text
+          rounded
+          class="my-2"
+        >
+          {{ link }}
+        </v-btn>
+        <v-col class="banner py-4 text-center white--text" cols="12">
+          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        </v-col>
+      </v-row>
+    </v-footer>
   </v-app>
 </template>
 
@@ -46,6 +63,7 @@ export default {
     load: false,
     icon: "mdi-newspaper-plus",
     position: true,
+    links: ["Home", "About Us", "Team", "Contact Us"],
   }),
   methods: {
     loadJob() {
