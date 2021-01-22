@@ -47,14 +47,13 @@
 </template>
 
 <script>
-import Card from "../../Card";
+import steps from "../../mixins/steps";
+import Card from "../Card";
 export default {
+  props: ["card"],
   data: () => ({
     highlight: "hg-0",
     frontpage: "fp-0",
-    card: {
-      show: false,
-    },
     options: [
       {
         text: "Show my ⭐️ company logo besides my post (+$49)",
@@ -110,31 +109,8 @@ export default {
   components: {
     Card,
   },
-  methods: {
-    next() {
-      this.$emit("valid", true);
-    },
-    back() {
-      this.$emit("valid", false);
-    },
-  },
-  beforeMount() {
-    this.card.title = "Fulano";
-    this.card.company = "Fulano S.A";
-    this.card.country = "Bolivia";
-    this.card.requirements = [
-      {
-        name: "React",
-        icon: "mdi-react",
-        color: "primary",
-      },
-      {
-        name: "Python",
-        icon: "mdi-language-python",
-        color: "orange",
-      },
-    ];
-  },
+  methods: {},
+  mixins: [steps],
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-combobox
+    <v-select
       v-model="chips"
       :items="items"
       chips
@@ -8,7 +8,7 @@
       label="Select job tags"
       multiple
       prepend-icon="mdi-filter-variant"
-      solo
+      attach
     >
       <template v-slot:selection="{ attrs, item, select, selected }">
         <v-chip
@@ -18,12 +18,11 @@
           @click="select"
           @click:close="remove(item)"
         >
-          <strong>{{ item }}</strong
-          >&nbsp;
-          <span>(interest)</span>
+          <!-- <v-icon left> {{ requirement.icon }} </v-icon> -->
+          <strong>{{ item }}</strong>
         </v-chip>
       </template>
-    </v-combobox>
+    </v-select>
 
     <v-row>
       <v-col cols="12">
@@ -39,7 +38,7 @@
     </v-row>
     <br />
     <v-row align="center" justify="center">
-      <v-btn class="mr-4" type="submit" color="primary" @click="next()">
+      <v-btn class="mr-4" type="submit" color="primary" @click="submitData()">
         Continue
       </v-btn>
       <v-btn @click="back" color="secondary"> Back </v-btn>
@@ -48,6 +47,7 @@
 </template>
 
 <script>
+import steps from "../../mixins/steps";
 export default {
   components: {},
   data: () => ({
@@ -55,12 +55,18 @@ export default {
     sometext: true,
     description: "",
     items: [
-      "Streaming",
-      "Programming",
-      "Playing video games",
-      "Watching movies",
-      "Sleeping",
-      "Eating",
+      "Java",
+      "Kotlin",
+      "Dart",
+      "Python",
+      "Developer",
+      "E-Commerce",
+      "E-Business",
+      "JavaScript",
+      "AWS",
+      "Senior",
+      "React",
+      "VueJs",
     ],
   }),
   methods: {
@@ -68,16 +74,30 @@ export default {
       this.chips.splice(this.chips.indexOf(item), 1);
       this.chips = [...this.chips];
     },
-    next() {
-      this.$emit("valid", true);
-    },
-    back() {
-      this.$emit("valid", false);
-    },
     clear() {
-      this.items = [];
+      this.chips = [];
       this.description = "";
       this.sometext = true;
+    },
+    submitData() {
+      this.$emit("companyDescription", {
+        requirements: this.chips,
+        description: this.description,
+      });
+      this.next();
+    },
+  },
+  mixins: [steps],
+  watch: {
+    description() {
+      if (this.description.length > 0) {
+        this.sometext = false;
+      }
+    },
+    chips() {
+      if (this.chips.length > 0) {
+        this.sometext = false;
+      }
     },
   },
 };

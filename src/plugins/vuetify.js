@@ -41,7 +41,6 @@ export default new Vuetify({
                 anchor: '#8c9eff',
             },
             // this.$vuetify.theme.themes.light.primary = '#4caf50'
-
         },
     },
     icons: {

@@ -14,7 +14,7 @@
 import json from "../external/files.json";
 
 // import axios from "axios";
-import Card from "./Card.vue";
+import Card from "../components/Card.vue";
 export default {
   data: () => ({
     cards: json,

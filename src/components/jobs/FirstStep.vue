@@ -28,7 +28,11 @@
         ></v-text-field>
       </validation-provider>
 
-      <validation-provider v-slot="{ errors }" name="Job Title">
+      <validation-provider
+        v-slot="{ errors }"
+        rules="required"
+        name="Job Title"
+      >
         <v-text-field
           v-model="title"
           :error-messages="errors"
@@ -96,7 +100,6 @@ export default {
   },
   data: () => ({
     name: "",
-    
     email: "",
     title: "",
   }),
@@ -112,13 +115,21 @@ export default {
       this.$refs.observer.reset();
     },
     next(invalid) {
-      if (localStorage.name) {
-        console.log(localStorage.name);
-      }
       if (!invalid) {
-        localStorage.setItem("name", "fulano");
+        this.$emit("companyData", {
+          title: this.title,
+          company: this.name,
+          companyemail: this.email,
+        });
         this.$emit("valid", true);
+      } else {
+        return;
       }
+    },
+  },
+  computed: {
+    loadData() {
+      return this.$store.state.newjob;
     },
   },
 };

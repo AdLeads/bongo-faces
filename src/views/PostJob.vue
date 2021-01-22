@@ -21,11 +21,7 @@
           </v-stepper-step>
 
           <v-divider></v-divider>
-          <v-stepper-step
-            :rules="[() => false]"
-            :complete="e1 > 4"
-            step="4"
-          >
+          <v-stepper-step :rules="[() => false]" :complete="e1 > 4" step="4">
             Payment
             <small>Alert message</small>
           </v-stepper-step>
@@ -37,7 +33,10 @@
         <v-stepper-items>
           <v-stepper-content step="1">
             <keep-alive>
-              <FirstStep @valid="$event ? (e1 = 2) : (e1 = 1)"></FirstStep>
+              <FirstStep
+                @valid="$event ? (e1 = 2) : (e1 = 1)"
+                @companyData="setCompany($event)"
+              ></FirstStep>
             </keep-alive>
           </v-stepper-content>
 
@@ -49,7 +48,10 @@
 
           <v-stepper-content step="3">
             <keep-alive>
-              <ThirdStep @valid="$event ? (e1 = 4) : (e1 = 2)"></ThirdStep>
+              <ThirdStep
+                @valid="$event ? (e1 = 4) : (e1 = 2)"
+                :card="newjob"
+              ></ThirdStep>
             </keep-alive>
           </v-stepper-content>
 
@@ -83,14 +85,28 @@
 </template>
 
 <script>
-import FirstStep from "./steps/FirstStep";
-import SecondStep from "./steps/SecondStep";
-import ThirdStep from "./steps/ThirdStep";
+import FirstStep from "../components/jobs/FirstStep";
+import SecondStep from "../components/jobs/SecondStep";
+import ThirdStep from "../components/jobs/ThirdStep";
 export default {
   data() {
     return {
       e1: 1,
       valid1: false,
+      newjob: {
+        jobId: -1,
+        title: "",
+        description: "",
+        postDate: "",
+        jobType: "basic",
+        show: false,
+        country: "",
+        company: "",
+        companymail: "",
+        logo: "",
+        requirements: [],
+        status: 0,
+      },
     };
   },
   components: {
@@ -99,6 +115,14 @@ export default {
     ThirdStep,
   },
   watch: {},
+  methods: {
+    setCompany(companyData) {
+      console.log(companyData);
+      this.newjob.company = companyData.company;
+      this.newjob.title = companyData.title;
+      this.newjob.companyemail = companyData.companyemail;
+    },
+  },
 };
 </script>
 

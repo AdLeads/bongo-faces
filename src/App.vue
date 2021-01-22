@@ -1,5 +1,18 @@
 <template>
   <v-app>
+    <v-system-bar
+      v-if="model"
+      app
+      color="#262626"
+      class="px-4"
+      dark
+      height="58"
+    >
+      <v-spacer></v-spacer>
+      <Suscription
+        @close="$event ? (model = false) : (model = true)"
+      ></Suscription>
+    </v-system-bar>
     <v-app-bar app color="banner" hide-on-scroll>
       <!-- <router-link to="/"> -->
       <v-img
@@ -26,7 +39,7 @@
       <transition name="slide" mode="out-in">
         <router-view></router-view>
       </transition>
-      <Suscription></Suscription>
+      <!--      <Suscription></Suscription>-->
       <br />
     </v-main>
 
@@ -51,7 +64,8 @@
 </template>
 
 <script>
-import Suscription from "./components/Suscription";
+import Suscription from "./components/Suscription.vue";
+
 export default {
   name: "App",
 
@@ -60,10 +74,15 @@ export default {
   },
 
   data: () => ({
+    model: true,
     load: false,
     icon: "mdi-newspaper-plus",
     position: true,
     links: ["Home", "About Us", "Team", "Contact Us"],
+    windowSize: {
+      x: 0,
+      y: 0,
+    },
   }),
   methods: {
     loadJob() {
@@ -76,9 +95,27 @@ export default {
         this.$router.push("/");
       }
       this.position = !this.position;
-      // this.$vuetify.theme.dark = true;
       this.load = false;
     },
+    onResize() {
+      this.windowSize = { x: window.innerWidth, y: window.innerHeight };
+      if (this.windowSize.x < 900) {
+        this.model = false;
+      }
+    },
+  },
+  mounted() {
+    this.onResize();
+  },
+  beforeMount() {
+    // console.log(this.$route.fullPath + "s");
+    if (this.$route.fullPath === "/") {
+      this.position = true;
+      this.icon = "mdi-newspaper-plus";
+    } else {
+      this.position = false;
+      this.icon = "mdi-keyboard-backspace";
+    }
   },
 };
 </script>
@@ -86,9 +123,11 @@ export default {
 .slide-enter-active {
   animation: slide-in 200ms ease-out forwards;
 }
+
 .slide-leave-active {
   animation: slide-out 200ms ease-out forwards;
 }
+
 @keyframes slide-in {
   from {
     transform: translateY(-30px);
