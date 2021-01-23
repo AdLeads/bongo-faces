@@ -66,7 +66,6 @@ export default {
   data: () => ({
     show: false,
   }),
-  beforeCreate() {},
 };
 </script>
 
