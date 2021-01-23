@@ -2,7 +2,7 @@
   <v-card class="mx-auto" max-width="1250px">
     <v-container fluid>
       <v-row dense>
-        <v-col v-for="card in cards" :key="card.key" :cols="card.flex">
+        <v-col v-for="(card, index) in cards" :key="index" cols="12">
           <v-card>
             <v-card-title v-text="card.title"></v-card-title>
             <v-card-text v-text="card.description"></v-card-text>

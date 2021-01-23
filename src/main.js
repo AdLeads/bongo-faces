@@ -4,7 +4,9 @@ import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false
 
+console.log(Vue.version)
+
 new Vue({
-  vuetify,
-  render: h => h(App)
+    vuetify,
+    render: h => h(App)
 }).$mount('#app')
