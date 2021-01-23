@@ -1,28 +1,41 @@
 <template>
   <v-card>
-    <v-select
+    <v-file-input
+      :rules="rules"
+      accept="image/png, image/jpeg, image/bmp"
+      placeholder="Upload your logo image"
+      prepend-icon="mdi-camera"
+      v-model="logoImg"
+    ></v-file-input>
+
+    <!-- prepend-icon="mdi-code-tags-check" -->
+    <v-combobox
       v-model="chips"
       :items="items"
-      chips
-      clearable
       label="Select job tags"
+      chips
       multiple
-      prepend-icon="mdi-filter-variant"
-      attach
+      clearable
+      prepend-icon="mdi-code-tags-check"
     >
-      <template v-slot:selection="{ attrs, item, select, selected }">
+      <template v-slot:selection="data">
         <v-chip
-          v-bind="attrs"
-          :input-value="selected"
+          v-bind="data.attrs"
+          :input-value="data.selected"
           close
-          @click="select"
-          @click:close="remove(item)"
+          @click="data.select"
+          @click:close="remove(data.item)"
         >
-          <!-- <v-icon left> {{ requirement.icon }} </v-icon> -->
-          <strong>{{ item }}</strong>
+          <v-avatar
+            class="white--text"
+            left
+            color="primary"
+            v-text="data.item.slice(0, 1).toUpperCase()"
+          ></v-avatar>
+          {{ data.item }}
         </v-chip>
       </template>
-    </v-select>
+    </v-combobox>
 
     <v-row>
       <v-col cols="12">
@@ -54,6 +67,7 @@ export default {
     chips: [],
     sometext: true,
     description: "",
+    logoImg: null,
     items: [
       "Java",
       "Kotlin",
@@ -68,6 +82,12 @@ export default {
       "React",
       "VueJs",
     ],
+    rules: [
+      (value) =>
+        !value ||
+        value.size < 2000000 ||
+        "Avatar size should be less than 2 MB!",
+    ],
   }),
   methods: {
     remove(item) {
@@ -80,8 +100,16 @@ export default {
       this.sometext = true;
     },
     submitData() {
+      let requirements = [];
+      for (var i = 0; i < this.chips.length; i++) {
+        requirements.push({
+          name: this.chips[i],
+          icon: "",
+        });
+      }
+      // console.log(requirements);
       this.$emit("companyDescription", {
-        requirements: this.chips,
+        requirements: requirements,
         description: this.description,
       });
       this.next();

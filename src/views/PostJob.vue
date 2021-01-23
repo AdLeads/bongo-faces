@@ -42,7 +42,10 @@
 
           <v-stepper-content step="2">
             <keep-alive>
-              <SecondStep @valid="$event ? (e1 = 3) : (e1 = 1)"></SecondStep>
+              <SecondStep
+                @valid="$event ? (e1 = 3) : (e1 = 1)"
+                @companyDescription="addDescription($event)"
+              ></SecondStep>
             </keep-alive>
           </v-stepper-content>
 
@@ -117,10 +120,16 @@ export default {
   watch: {},
   methods: {
     setCompany(companyData) {
-      console.log(companyData);
+      // console.log(companyData);
       this.newjob.company = companyData.company;
       this.newjob.title = companyData.title;
       this.newjob.companyemail = companyData.companyemail;
+      this.newjob.country = companyData.country;
+    },
+    addDescription(data) {
+      // console.log(data);
+      this.newjob.requirements = data.requirements;
+      this.newjob.description = data.description;
     },
   },
 };

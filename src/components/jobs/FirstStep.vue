@@ -15,6 +15,17 @@
           required
         ></v-text-field>
       </validation-provider>
+
+      <validation-provider v-slot="{ errors }" name="Country" rules="required">
+        <v-select
+          v-model="country"
+          :items="countries"
+          label="Country"
+          :error-messages="errors"
+          required
+        ></v-select>
+      </validation-provider>
+
       <validation-provider
         v-slot="{ errors }"
         name="Company Email"
@@ -63,6 +74,7 @@
 
 
 <script>
+import axios from "axios";
 import { required, digits, email, max } from "vee-validate/dist/rules";
 import {
   extend,
@@ -102,8 +114,25 @@ export default {
     name: "",
     email: "",
     title: "",
+    country: "",
+    countries: [],
   }),
+  mounted() {
+    axios
+      .get("https://restcountries.eu/rest/v2/")
+      .then((response) => {
+        let co = response.data;
 
+        for (var i = 0; i < co.length; i++) {
+          this.countries.push(co[i].name);
+          // console.log(co[i]);
+        }
+        // console.log(this.countries);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
   methods: {
     submit() {
       this.$refs.observer.validate();
@@ -120,6 +149,7 @@ export default {
           title: this.title,
           company: this.name,
           companyemail: this.email,
+          country: this.country,
         });
         this.$emit("valid", true);
       } else {

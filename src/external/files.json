@@ -76,7 +76,6 @@
     "country": "La Paz, Bolivia",
     "company": "Fulano S.A.",
     "logo": "https://firebasestorage.googleapis.com/v0/b/samplefulano.appspot.com/o/logo.png?alt=media&token=63bd4db5-6e41-40c1-939d-2a5031e687cc",
-    "link":"/posts/2353",
     "requirements": [{
         "name": "React",
         "icon": "mdi-react",
