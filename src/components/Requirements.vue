@@ -7,8 +7,9 @@
       :key="i"
       outlined
     >
-      <v-icon left> {{ requirement.icon }} </v-icon>
-      {{ requirement.name }}
+      <!-- <v-icon left> {{ requirement.icon }} </v-icon> -->
+      <!-- {{ requirement.name }} -->
+      {{ requirement }}
     </v-chip>
   </div>
 </template>

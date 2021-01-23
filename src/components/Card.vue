@@ -1,5 +1,5 @@
 <template>
-  <v-card :color="card.jobType">
+  <v-card :color="card.type">
     <v-row align="center" justify="center">
       <v-col cols="12" sm="2" align="center">
         <v-hover>
@@ -9,7 +9,7 @@
               :src="card.logo"
               height="150px"
               class="images-cs"
-              @click="card.show = !card.show"
+              @click="show = !show"
             ></v-img>
           </v-avatar>
         </v-hover>
@@ -18,10 +18,10 @@
         <v-card-title>
           {{ card.title }}
           <v-spacer></v-spacer>
-          <Requirements :requirements="card.requirements"> </Requirements>
+          <Requirements :requirements="card.tags"> </Requirements>
         </v-card-title>
         <v-card-subtitle>
-          {{ card.company }}
+          {{ card.companyName }}
         </v-card-subtitle>
 
         <v-card-actions>
@@ -29,8 +29,8 @@
             >{{ card.country }}
           </v-chip>
           <v-spacer></v-spacer>
-          <v-btn color="blue" text @click="card.show = !card.show">
-            {{ card.show ? "less" : "More" }}
+          <v-btn color="blue" text @click="show = !show">
+            {{ show ? "less" : "More" }}
           </v-btn>
           <!-- <v-btn
                       icon
@@ -43,7 +43,7 @@
       </v-col>
     </v-row>
     <v-expand-transition>
-      <div v-show="card.show">
+      <div v-show="show">
         <v-divider></v-divider>
         <Description
           :description="card.description"
@@ -63,9 +63,10 @@ export default {
     Description,
     Requirements,
   },
-  beforeMount() {
-    this.card.show = false;
-  },
+  data: () => ({
+    show: false,
+  }),
+  beforeCreate() {},
 };
 </script>
 
