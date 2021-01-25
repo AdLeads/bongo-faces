@@ -9,16 +9,18 @@ export default new Vuetify({
     theme: {
         themes: {
             light: {
-                primary: colors.blue,
+                primary: "#F4511E",
                 secondary: colors.grey.darken1,
 
-                premium: colors.green,
-                normal: colors.yellow,
+                premium: "#FFBA7E",
+                normal: "#FFF7CC",
                 default: colors.white,
 
-                banner: colors.blueGrey.darken4,
+                banner: "#989696",
                 accent: colors.shades.black,
                 error: colors.red.accent3,
+                background: "#F9F9F9",
+                footercolor: "#3B3737"
             },
             dark: {
                 primary: colors.blue.darken2,

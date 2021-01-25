@@ -1,5 +1,6 @@
 <template>
-  <v-app>
+  <v-app :style="'background:#F9F9F9'"
+    >>
     <v-app-bar app color="banner" hide-on-scroll>
       <v-img
         class="mx-2"
@@ -20,9 +21,9 @@
       <br />
     </v-main>
 
-    <v-footer color="banner" padless>
+    <v-footer padless>
       <v-row justify="center" no-gutters>
-        <v-col class="banner py-4 text-center white--text" cols="12">
+        <v-col class="footercolor py-4 text-center white--text" cols="12">
           {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
         </v-col>
       </v-row>

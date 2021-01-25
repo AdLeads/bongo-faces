@@ -1,32 +1,45 @@
 [{
     "key": 1,
-    "title": "Java Developer",
-    "companyName": "Bose Corporation",
-    "description": "At Bose, better sound is just the beginning. We’re passionate engineers, developers, researchers, retailers, marketers … and dreamers. One goal unites us — to create products and experiences our customers simply can’t get anywhere else. We are driven to help people reach their fullest human potential. Creating technology to help people to feel more, do more, and be more. We are highly motivated and curious, and we come to work every day looking to solve real problems and make the best experiences for our customers possible. The Searchandizing team is responsible for creating an amazing site search and product category merchandizing experience on the bose.com family of sites, helping connect our customers with exactly the right content or product for their needs.To bring this experience to life, the team has full stack responsibilities that run all the way from webpage presentation through building an accurate search index and managing product information, layering in microservices and AI - driven personalization as part of an exciting greenfield build.This capability is high volume and plays a significant part in the success of the Bose ecommerce experience.",
+    "title": "Product Support Manager",
+    "companyName": "Aula",
+    "description": "Mission: Be a key, strategic member of our Product Support Team, and deliver 'Educator love' by a thorough understanding of Aula, the platform and our partners (a community of 50k+). Why: Engagement is one of the most strongly-correlated predictors of success in learning. We are shaping how teachers teach and making every student feel a part of their classroom. Who: You are a natural-born problem solver with a partner-first mindset. You're not phased by challenges (let it be technical troubleshooting or solving complex client queries), and relish working in an ever-changing environment where no two days are alike.",
     "type": "premium",
-    "country": "Lisbon",
-    "logo": "https://remoteok.io/assets/jobs/d9470f42d27f2115774501f0acafcdfd1610504703.png?1610504703",
-    "datePosted": "2021-01-19T19:43:17.556Z",
-    "dateModified": "2021-01-19T19:43:17.556Z",
+    "country": "United Kingdom",
+    "logo": "https://remoteok.io/assets/jobs/bfc434662064e750c515acde285968ff1610619931.jpg",
+    "datePosted": "1611085397",
+    "dateModified": "1611171797",
     "tags": [
-      "Java", "Agile"
+      "Technical troubleshooting", "User training", "Zendesk", "Edu"
     ],
     "status": "available"
-
   },
-
   {
     "key": 2,
-    "title": "Developer",
-    "companyName": "Bose Corporation",
-    "description": "At Bose, better sound is just the beginning. We’re passionate engineers, developers, researchers, retailers, marketers … and dreamers. One goal unites us — to create products and experiences our customers simply can’t get anywhere else. We are driven to help people reach their fullest human potential. Creating technology to help people to feel more, do more, and be more. We are highly motivated and curious, and we come to work every day looking to solve real problems and make the best experiences for our customers possible. The Searchandizing team is responsible for creating an amazing site search and product category merchandizing experience on the bose.com family of sites, helping connect our customers with exactly the right content or product for their needs.To bring this experience to life, the team has full stack responsibilities that run all the way from webpage presentation through building an accurate search index and managing product information, layering in microservices and AI - driven personalization as part of an exciting greenfield build.This capability is high volume and plays a significant part in the success of the Bose ecommerce experience.",
-    "type": "basic",
-    "country": "Lisbon",
-    "logo": "https://remoteok.io/assets/jobs/d9470f42d27f2115774501f0acafcdfd1610504703.png?1610504703",
-    "datePosted": "2021-01-19T19:43:17.556Z",
-    "dateModified": "2021-01-19T19:43:17.556Z",
+    "title": "Product Support Manager",
+    "companyName": "Aula",
+    "description": "Mission: Be a key, strategic member of our Product Support Team, and deliver 'Educator love' by a thorough understanding of Aula, the platform and our partners (a community of 50k+). Why: Engagement is one of the most strongly-correlated predictors of success in learning. We are shaping how teachers teach and making every student feel a part of their classroom. Who: You are a natural-born problem solver with a partner-first mindset. You're not phased by challenges (let it be technical troubleshooting or solving complex client queries), and relish working in an ever-changing environment where no two days are alike.",
+    "type": "normal",
+    "country": "United Kingdom",
+    "logo": "https://remoteok.io/assets/jobs/bfc434662064e750c515acde285968ff1610619931.jpg",
+    "datePosted": "1611085397",
+    "dateModified": "1611171797",
     "tags": [
-      "Java", "Agile"
+      "Technical troubleshooting", "User training", "Zendesk", "Edu"
+    ],
+    "status": "available"
+  },
+  {
+    "key": 3,
+    "title": "Product Support Manager",
+    "companyName": "Aula",
+    "description": "Mission: Be a key, strategic member of our Product Support Team, and deliver 'Educator love' by a thorough understanding of Aula, the platform and our partners (a community of 50k+). Why: Engagement is one of the most strongly-correlated predictors of success in learning. We are shaping how teachers teach and making every student feel a part of their classroom. Who: You are a natural-born problem solver with a partner-first mindset. You're not phased by challenges (let it be technical troubleshooting or solving complex client queries), and relish working in an ever-changing environment where no two days are alike.",
+    "type": "basic",
+    "country": "United Kingdom",
+    "logo": "https://remoteok.io/assets/jobs/bfc434662064e750c515acde285968ff1610619931.jpg",
+    "datePosted": "1611085397",
+    "dateModified": "1611171797",
+    "tags": [
+      "Technical troubleshooting", "User training", "Zendesk", "Edu"
     ],
     "status": "available"
   }

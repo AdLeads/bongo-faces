@@ -6,6 +6,7 @@
       v-for="(requirement, i) in requirements"
       :key="i"
       outlined
+      label
     >
       <!-- <v-icon left> {{ requirement.icon }} </v-icon> -->
       <!-- {{ requirement.name }} -->
