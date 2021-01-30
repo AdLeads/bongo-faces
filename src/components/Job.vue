@@ -7,50 +7,17 @@
         @click="show = !show"
         :ripple="false"
         :elevation="hover ? 5 : 0"
+        class="d-flex flex-row mb-6"
       >
-        <v-row no-gutters align="center" justify="center">
+        <v-row align="center" justify="center" no-gutters>
           <v-col cols="12" sm="6">
-            <!-- <v-card flat tile :color="card.type" :ripple="false"> -->
-            <v-row justify="center" align="center" no-gutters>
-              <v-col cols="12" sm="2">
-                <v-btn
-                  color="white"
-                  left
-                  fab
-                  v-if="!isMobile()"
-                  :style="{ left: '50%', transform: 'translateX(-85%)' }"
-                  height="70px"
-                  width="70px"
-                >
-                  <v-avatar size="65px">
-                    <v-img
-                      lazy-src="https://picsum.photos/id/11/10/6"
-                      :src="card.logo"
-                      contain
-                    ></v-img>
-                  </v-avatar>
-                </v-btn>
-
-                <v-avatar size="90px" v-if="isMobile()">
-                  <v-img
-                    lazy-src="https://picsum.photos/id/11/10/6"
-                    :src="card.logo"
-                    class="images-cs"
-                  ></v-img>
-                </v-avatar>
-              </v-col>
-              <v-col cols="12" sm="10">
-                <h5>{{ card.companyName }}</h5>
-                <h3>
-                  {{ card.title }}
-                </h3>
-                <v-chip label outlined color="secondary">
-                  <v-icon left> mdi-map-marker </v-icon>
-                  {{ card.country }}
-                </v-chip>
-              </v-col>
-            </v-row>
-            <!-- </v-card> -->
+            <Avatar
+              :logo="card.logo"
+              :name="card.companyName"
+              :title="card.title"
+              :country="card.country"
+            >
+            </Avatar>
           </v-col>
           <v-col cols="12" sm="6">
             <!-- <v-card :ripple="false" flat :color="card.type"> -->
@@ -59,7 +26,7 @@
                 <Requirements :requirements="card.tags"> </Requirements>
               </v-col>
               <v-col cols="12" sm="5">
-                <v-row justify="center" align="center">
+                <v-row justify="center" align="center" no-gutters>
                   <v-col cols="12" sm="6">
                     <div align="center">{{ timestampToDate() }}</div>
                   </v-col>
@@ -101,12 +68,14 @@
 <script>
 import Description from "./Description";
 import Requirements from "./Requirements";
+import Avatar from "./Jobs/Avatar.vue";
 import moment from "moment";
 export default {
   props: ["card"],
   components: {
     Description,
     Requirements,
+    Avatar,
   },
   data: () => ({
     show: false,
@@ -169,8 +138,5 @@ export default {
   to {
     opacity: 0;
   }
-}
-card:focus {
-  background-color: "#f9f9f9";
 }
 </style>

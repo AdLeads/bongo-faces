@@ -16,9 +16,10 @@ export default new Vuetify({
                 normal: "#FFF7CC",
                 default: colors.white,
 
-                banner: "#989696",
                 accent: colors.shades.black,
                 error: colors.red.accent3,
+
+                banner: "#989696",
                 background: "#F9F9F9",
                 footercolor: "#3B3737"
             },
